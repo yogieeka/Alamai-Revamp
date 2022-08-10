@@ -1,7 +1,7 @@
 
 # Alami Revamp
 
-this project integration with Alami api, and modifying boilerplate from the coding machine
+this project integration with api, and modifying boilerplate from the coding machine
 
 
 
@@ -36,13 +36,12 @@ After that run this command
 - React Navigation
 
 
+## Todo Next
+- Change App Icon
+- Dinamic api with injection from redux RTK Query
+- Cleaning Code in Product List Container
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-
-
-
-
 
