@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react';
 import {
   View,
   ActivityIndicator,
@@ -7,23 +7,22 @@ import {
   TouchableOpacity,
   Alert,
   ScrollView,
-} from 'react-native'
-import { useTheme } from '@/Hooks'
-import { useAddProductMutation } from '@/Services/api'
-import { Colors } from '@/Theme/Variables'
+} from 'react-native';
+import {useTheme} from '@/Hooks';
+import {useAddProductMutation} from '@/Services/api';
+import {Colors} from '@/Theme/Variables';
 
 const AddProductComponent = () => {
-  const { Common, Fonts, Gutters, Layout } = useTheme()
-  const [addProduct, { isLoading, isSuccess, isError }] =
-    useAddProductMutation()
-  const [sellerId, setSellerID] = useState('')
-  const [nama, setNama] = useState('')
-  const [satuan, setSatuan] = useState('')
-  const [hargaSatuan, setHargaSatuan] = useState('')
-  const [deskripsi, setDeskripsi] = useState('')
+  const {Common, Fonts, Gutters, Layout} = useTheme();
+  const [addProduct, {isLoading, isSuccess, isError}] = useAddProductMutation();
+  const [sellerId, setSellerID] = useState('');
+  const [nama, setNama] = useState('');
+  const [satuan, setSatuan] = useState('');
+  const [hargaSatuan, setHargaSatuan] = useState('');
+  const [deskripsi, setDeskripsi] = useState('');
   const canSaveDataSeller =
     [sellerId, nama, satuan, hargaSatuan, deskripsi].every(Boolean) &&
-    !isLoading
+    !isLoading;
 
   const onAddProductPostClicked = async () => {
     if (canSaveDataSeller) {
@@ -34,19 +33,19 @@ const AddProductComponent = () => {
           satuan,
           hargaSatuan,
           deskripsi,
-        }).unwrap()
-        setSellerID('')
-        setNama('')
-        setSatuan('')
-        setHargaSatuan('')
-        setDeskripsi('')
-        Alert.alert('Sukses', 'Berhasil Menambah Produk')
+        }).unwrap();
+        setSellerID('');
+        setNama('');
+        setSatuan('');
+        setHargaSatuan('');
+        setDeskripsi('');
+        Alert.alert('Sukses', 'Berhasil Menambah Produk');
       } catch (err) {
-        console.error('Failed to add product: ', err)
-        Alert.alert('Terjadi kesalahan', String(err))
+        console.error('Failed to add product: ', err);
+        Alert.alert('Terjadi kesalahan', String(err));
       }
     }
-  }
+  };
 
   return (
     <ScrollView style={[Layout.column, Layout.fill, Gutters.largeTMargin]}>
@@ -97,8 +96,7 @@ const AddProductComponent = () => {
           Gutters.regularBMargin,
           Gutters.regularTMargin,
         ]}
-        onPress={onAddProductPostClicked}
-      >
+        onPress={onAddProductPostClicked}>
         {isLoading ? (
           <ActivityIndicator color={Colors.white} />
         ) : (
@@ -108,7 +106,7 @@ const AddProductComponent = () => {
         )}
       </TouchableOpacity>
     </ScrollView>
-  )
-}
+  );
+};
 
-export default AddProductComponent
+export default AddProductComponent;

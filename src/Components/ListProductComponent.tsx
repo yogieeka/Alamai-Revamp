@@ -1,66 +1,60 @@
-import React, { useCallback } from 'react'
-import { View, Text, FlatList, ScrollView, RefreshControl } from 'react-native'
-import { useTheme } from '@/Hooks'
-import { currency } from '@/Theme/Conversion'
+import React, {useCallback} from 'react';
+import {View, Text, FlatList, ScrollView, RefreshControl} from 'react-native';
+import {useTheme} from '@/Hooks';
+import {currency} from '@/Theme/Conversion';
 
 const ListProductComponent = (props: any) => {
-  const { Common, Fonts, Gutters, Layout } = useTheme()
+  const {Common, Fonts, Gutters, Layout} = useTheme();
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({item}) => (
     <View style={Layout.row}>
       <Text
         style={[
           Fonts.textSmall,
-          { minWidth: 40, borderWidth: 0.5, textAlign: 'center' },
-        ]}
-      >
+          {minWidth: 40, borderWidth: 0.5, textAlign: 'center'},
+        ]}>
         {item.id}
       </Text>
       <Text
         style={[
           Fonts.textSmall,
           Gutters.regularLPadding,
-          { minWidth: 150, borderWidth: 0.5 },
-        ]}
-      >
+          {minWidth: 150, borderWidth: 0.5},
+        ]}>
         {item.nama}
       </Text>
       <Text
         style={[
           Fonts.textSmall,
-          { minWidth: 100, textAlign: 'center', borderWidth: 0.5 },
-        ]}
-      >
+          {minWidth: 100, textAlign: 'center', borderWidth: 0.5},
+        ]}>
         {item.satuan}
       </Text>
       <Text
         style={[
           Fonts.textSmall,
           Gutters.regularLPadding,
-          { minWidth: 100, textAlign: 'left', borderWidth: 0.5 },
-        ]}
-      >
+          {minWidth: 140, textAlign: 'left', borderWidth: 0.5, paddingLeft: 30},
+        ]}>
         {currency(item.hargaSatuan)}
       </Text>
       <Text
         style={[
           Fonts.textSmall,
-          { minWidth: 100, textAlign: 'center', borderWidth: 0.5 },
-        ]}
-      >
+          {minWidth: 100, textAlign: 'center', borderWidth: 0.5},
+        ]}>
         {item.sellerId}
       </Text>
       <Text
         style={[
           Fonts.textSmall,
           Gutters.regularRMargin,
-          { minWidth: 200, textAlign: 'center', borderWidth: 0.5 },
-        ]}
-      >
+          {minWidth: 200, textAlign: 'center', borderWidth: 0.5},
+        ]}>
         {item.deskripsi}
       </Text>
     </View>
-  )
+  );
 
   return (
     <View style={[Layout.fill, Gutters.largeTMargin]}>
@@ -70,56 +64,51 @@ const ListProductComponent = (props: any) => {
             <Text
               style={[
                 Fonts.textSmall,
-                { minWidth: 40, borderWidth: 0.5, textAlign: 'center' },
-              ]}
-            >
+                {minWidth: 40, borderWidth: 0.5, textAlign: 'center'},
+              ]}>
               {'ID'}
             </Text>
             <Text
               style={[
                 Fonts.textSmall,
                 Gutters.regularLPadding,
-                { minWidth: 150, borderWidth: 0.5 },
-              ]}
-            >
+                {minWidth: 150, borderWidth: 0.5},
+              ]}>
               {'Nama'}
             </Text>
             <Text
               style={[
                 Fonts.textSmall,
-                { minWidth: 100, borderWidth: 0.5, textAlign: 'center' },
-              ]}
-            >
+                {minWidth: 100, borderWidth: 0.5, textAlign: 'center'},
+              ]}>
               {'Satuan'}
             </Text>
             <Text
               style={[
                 Fonts.textSmall,
-                { minWidth: 100, textAlign: 'center', borderWidth: 0.5 },
-              ]}
-            >
+                {minWidth: 140, textAlign: 'center', borderWidth: 0.5},
+              ]}>
               {'Harga satuan'}
             </Text>
             <Text
               style={[
                 Fonts.textSmall,
-                { minWidth: 100, textAlign: 'center', borderWidth: 0.5 },
-              ]}
-            >
+                {minWidth: 100, textAlign: 'center', borderWidth: 0.5},
+              ]}>
               {'Seller ID'}
             </Text>
             <Text
               style={[
                 Fonts.textSmall,
-                { minWidth: 200, textAlign: 'center', borderWidth: 0.5 },
-              ]}
-            >
+                {minWidth: 200, textAlign: 'center', borderWidth: 0.5},
+              ]}>
               {'Deskripsi'}
             </Text>
           </View>
 
           {props.data && (
             <FlatList
+              contentContainerStyle={Gutters.regularBPadding}
               data={props.data.data}
               renderItem={renderItem}
               keyExtractor={item => item.id}
@@ -128,7 +117,7 @@ const ListProductComponent = (props: any) => {
         </View>
       </ScrollView>
     </View>
-  )
-}
+  );
+};
 
-export default ListProductComponent
+export default ListProductComponent;

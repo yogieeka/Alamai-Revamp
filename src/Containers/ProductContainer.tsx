@@ -1,10 +1,10 @@
-import React from 'react'
-import { View, ScrollView } from 'react-native'
-import { useTheme } from '@/Hooks'
-import AddProductComponent from '@/Components/AddProductComponent'
+import React from 'react';
+import {View, ScrollView} from 'react-native';
+import {useTheme} from '@/Hooks';
+import AddProductComponent from '@/Components/AddProductComponent';
 
 const ProductContainer = () => {
-  const { Gutters, Layout } = useTheme()
+  const {Gutters, Layout} = useTheme();
   return (
     <ScrollView
       style={Layout.fill}
@@ -12,13 +12,12 @@ const ProductContainer = () => {
         Layout.fill,
         Layout.colCenter,
         Gutters.smallHPadding,
-      ]}
-    >
+      ]}>
       <View>
         <AddProductComponent />
       </View>
     </ScrollView>
-  )
-}
+  );
+};
 
-export default ProductContainer
+export default ProductContainer;

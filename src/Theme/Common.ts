@@ -28,6 +28,17 @@ export default function <C>({ Colors, ...args }: CommonParams<C>) {
         marginTop: 10,
         marginBottom: 10,
       },
+      textInputSmall: {
+        borderWidth: 0.5,
+        borderColor: Colors.text,
+        backgroundColor: Colors.inputBackground,
+        color: Colors.text,
+        minHeight: 40,
+        width: 150,
+        textAlign: 'center',
+        marginTop: 5,
+        marginBottom: 5,
+      },
     }),
   }
 }

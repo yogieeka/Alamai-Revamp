@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react';
 import {
   View,
   ActivityIndicator,
@@ -6,31 +6,31 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
-} from 'react-native'
-import { useTheme } from '@/Hooks'
-import { useAddSellerMutation } from '@/Services/api'
-import { Colors } from '@/Theme/Variables'
+} from 'react-native';
+import {useTheme} from '@/Hooks';
+import {useAddSellerMutation} from '@/Services/api';
+import {Colors} from '@/Theme/Variables';
 
 const AddSellerComponent = () => {
-  const { Common, Fonts, Gutters, Layout } = useTheme()
-  const [addSeller, { isLoading, isSuccess, isError }] = useAddSellerMutation()
-  const [nama, setNama] = useState('')
-  const [kota, setKota] = useState('')
-  const canSaveDataSeller = [nama, kota].every(Boolean) && !isLoading
+  const {Common, Fonts, Gutters, Layout} = useTheme();
+  const [addSeller, {isLoading, isSuccess, isError}] = useAddSellerMutation();
+  const [nama, setNama] = useState('');
+  const [kota, setKota] = useState('');
+  const canSaveDataSeller = [nama, kota].every(Boolean) && !isLoading;
 
   const onAddSellerPostClicked = async () => {
     if (canSaveDataSeller) {
       try {
-        await addSeller({ nama, kota }).unwrap()
-        setNama('')
-        setKota('')
-        Alert.alert('Sukses', 'Berhasil Menambah Penjual')
+        await addSeller({nama, kota}).unwrap();
+        setNama('');
+        setKota('');
+        Alert.alert('Sukses', 'Berhasil Menambah Penjual');
       } catch (err) {
-        console.error('Failed to add seller: ', err)
-        Alert.alert('Terjadi kesalahan', String(err))
+        console.error('Failed to add seller: ', err);
+        Alert.alert('Terjadi kesalahan', String(err));
       }
     }
-  }
+  };
 
   return (
     <View style={[Layout.column, Layout.fill, Gutters.largeTMargin]}>
@@ -57,8 +57,7 @@ const AddSellerComponent = () => {
           Gutters.regularBMargin,
           Gutters.regularTMargin,
         ]}
-        onPress={onAddSellerPostClicked}
-      >
+        onPress={onAddSellerPostClicked}>
         {isLoading ? (
           <ActivityIndicator color={Colors.white} />
         ) : (
@@ -68,7 +67,7 @@ const AddSellerComponent = () => {
         )}
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default AddSellerComponent
+export default AddSellerComponent;
