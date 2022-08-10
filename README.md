@@ -62,12 +62,12 @@ Running Emulator/device
 - Dinamic api with injection from redux RTK Query
 - Cleaning Code in Product List Container
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
 ## Documentation
 
 [Documentation](https://github.com/yogieeka/Alami-Revamp/blob/master/README.md#features)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
