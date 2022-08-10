@@ -6,23 +6,31 @@ this project integration with api, and modifying boilerplate from the coding mac
 
 
 
-## Deployment
+## Run Locally
 
-To deploy this project run
-
-```bash
-  yarn 
-  or
-  npm i
-```
-
-After that run this command
+Clone the project
 
 ```bash
-  yarn android
+  git clone https://github.com/yogieeka/Alami-Revamp
 ```
 
+Go to the project directory
 
+```bash
+  cd Alami-Revamp
+```
+
+Install dependencies
+
+```bash
+  npm install or Yarn
+```
+
+Running Emulator/device
+
+```bash
+  npm run android 
+```
 
 
 ## Features
@@ -35,6 +43,18 @@ After that run this command
 - Clean Folder Structure
 - React Navigation
 
+
+## Directory layout 
+
+- **src/Assets:** assets (image, audio files, ...) used by the application
+- **src/Components:** presentational components
+- **src/Config:** configuration of the application
+- **src/Containers:** container components, i.e. the application's screens
+- **src/Navigators:** react navigation navigators
+- **src/Services:** application services, e.g. API clients
+- **src/Stores:** redux actions, reducers and stores
+- **src/Translations:** application strings, you can add languages files and be able to translate your app strings
+- **src/Theme:** base styles for the applicatio
 
 ## Todo Next
 - Change App Icon
