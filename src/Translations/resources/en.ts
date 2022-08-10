@@ -1,5 +1,5 @@
 export default {
-  welcome: 'Welcome to React Native Alami by TheCodingMachine',
+  welcome: 'Welcome to React Native Alami by Yogieeka',
   actions: {
     continue: 'Continue',
   },

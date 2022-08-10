@@ -5,6 +5,7 @@ import { useTheme } from '@/Hooks'
 import { Brand } from '@/Components'
 import { setDefaultTheme } from '@/Store/Theme'
 import { navigateAndSimpleReset } from '@/Navigators/utils'
+import { Colors } from '@/Theme/Variables'
 
 const StartupContainer = () => {
   const { Layout, Gutters, Fonts } = useTheme()
@@ -26,10 +27,10 @@ const StartupContainer = () => {
   })
 
   return (
-    <View style={[Layout.fill, Layout.colCenter]}>
+    <View style={[Layout.fill, Layout.colCenter, {backgroundColor:'#079DC7'}]}>
       <Brand />
-      <ActivityIndicator size={'large'} style={[Gutters.largeVMargin]} />
-      <Text style={Fonts.textCenter}>{t('welcome')}</Text>
+      <ActivityIndicator color={Colors.white} size={'large'} style={[Gutters.largeVMargin]} />
+      <Text style={[Fonts.textCenter,{color:Colors.white}]}>{t('welcome')}</Text>
     </View>
   )
 }
